@@ -1,0 +1,25 @@
+{
+  "name": "3d_model",
+  "version": "1.0.0",
+  "description": "Testing three.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boegle/3D_Model.git"
+  },
+  "keywords": [
+    "three.js"
+  ],
+  "author": "Chanakarn Niyornram",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Boegle/3D_Model/issues"
+  },
+  "homepage": "https://github.com/Boegle/3D_Model#readme",
+  "dependencies": {
+    
+  }
+}

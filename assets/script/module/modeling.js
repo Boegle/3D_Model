@@ -27,9 +27,9 @@ let model = {
         animate();
     },
     test: function () {
-        const renderer;
-        const scene;
-        const camera;
+        let renderer;
+        let scene;
+        let camera;
     }
 }
 
