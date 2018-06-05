@@ -52,6 +52,33 @@ let model = {
         document.body.appendChild(renderer.domElement);
 
         render();
+        
+        function animate (){
+            requestAnimationFrame( animate );
+
+            cube.rotation.x += 0.1;
+            cube.rotation.y += 0.1;
+
+            renderer.render( scene, camera );
+        };
+
+        animate();
+
+        //Control
+        let control = new function() {
+            this.rotationSpeed = 0.005;
+            this.opacity = 0.6;
+            this.color = cubeMaterial.color.getHex();
+            };
+
+        addControlGui(control);
+
+        function addControlGui(controlObject) {
+            var gui = new dat.GUI();
+            gui.add(controlObject, 'rotationSpeed', -0.01, 0.01);
+            gui.add(controlObject, 'opacity', 0.1, 1);
+            gui.addColor(controlObject, 'color');
+            }
     }
 }
 
