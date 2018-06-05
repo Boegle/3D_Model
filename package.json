@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/Boegle/3D_Model#readme",
   "dependencies": {
-    
+    "dat.gui": "^0.7.2"
   }
 }
