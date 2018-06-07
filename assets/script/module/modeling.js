@@ -57,10 +57,9 @@ let model = {
         document.body.appendChild(renderer.domElement);
 
         this.addControl()
+        this.addStats()
 
-        render();
-
-        // animate();
+        this.render();
     },
     addControl: function () {
         control = new function () {
@@ -68,6 +67,20 @@ let model = {
             this.opacity = 0.6;
         };
         addControlGui(control);
+    },
+    render : function () {
+        requestAnimationFrame(this.render.bind(this));
+        object.cube.rotation.y += control.rotationSpeed;
+        stats.update();
+        renderer.render(scene, camera);
+    },
+    addStats : function () {
+        stats = new Stats();
+        stats.setMode(0);
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild( stats.domElement );
     }
 }
 
@@ -75,12 +88,6 @@ let model = {
 function animate() {
     requestAnimationFrame(animate);
     object.cube.rotation.y += 0.1;
-    renderer.render(scene, camera);
-}
-
-function render() {
-    requestAnimationFrame(render);
-    object.cube.rotation.y += control.rotationSpeed;
     renderer.render(scene, camera);
 }
 
@@ -93,3 +100,4 @@ function addControlGui(controlObject) {
 export {
     model
 }
+
