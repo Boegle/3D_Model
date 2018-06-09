@@ -17,7 +17,7 @@ let model = {
         camera.position.y = 4;
         camera.position.z = 3;
         camera.lookAt(scene.position);
-        let modelPath = '../assets/model/model.gltf'
+        let modelPath = './assets/model/model.gltf'
 
         this.loader(modelPath)
     },
